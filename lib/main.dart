@@ -34,8 +34,8 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         routes: {
-          AppRoutes.HOME_PAGE: (ctx) => HomePage(),
-          AppRoutes.ADD_PERSON: (ctx) => AddPerson(),
+          AppRoutes.HOME_PAGE: (ctx) => const HomePage(),
+          AppRoutes.ADD_PERSON: (ctx) => const AddPerson(),
         },
       ),
     );

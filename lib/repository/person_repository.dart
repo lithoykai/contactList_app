@@ -34,7 +34,6 @@ class PersonRespository with ChangeNotifier {
     } else {
       storage = await Hive.openBox('person');
     }
-    // storage!.clear();
     final data = storage!.keys.map((key) {
       final item = storage!.get(key);
       return Person(
@@ -54,17 +53,14 @@ class PersonRespository with ChangeNotifier {
     } else {
       storage = await Hive.openBox('person');
     }
-    print(person.key);
+
     await storage!.delete(person.key).then(
           (value) => _items.remove(person),
         );
-    // _items.remove(person);
-
     notifyListeners();
   }
 
   Future<void> addPerson(Person person) async {
-    print('Fui chamado e estou adicionando!');
     storage = Hive.box('person');
     storage!.add(person.toJson());
     await fetchPerson();

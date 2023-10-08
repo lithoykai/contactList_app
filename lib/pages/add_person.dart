@@ -16,7 +16,7 @@ class AddPerson extends StatefulWidget {
 class _AddPersonState extends State<AddPerson> {
   final FocusNode _nameFocus = FocusNode();
   final FocusNode _numberFocus = FocusNode();
-  Map<String, dynamic> _formData = {};
+  final Map<String, dynamic> _formData = {};
   final _formKey = GlobalKey<FormState>();
 
   void updateImage() {
@@ -58,6 +58,7 @@ class _AddPersonState extends State<AddPerson> {
                 if (name!.isEmpty) {
                   return 'Por favor, adicione algum nome.';
                 }
+                return null;
               },
             ),
             const SizedBox(
@@ -74,6 +75,7 @@ class _AddPersonState extends State<AddPerson> {
                 if (number!.isEmpty) {
                   return 'Por favor, adicione algum número.';
                 }
+                return null;
               },
             ),
             const SizedBox(

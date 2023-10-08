@@ -63,11 +63,11 @@ class _HomePageState extends State<HomePage> {
                 leading: CircleAvatar(
                   backgroundImage: person.image != null
                       ? FileImage(person.image!)
-                      : AssetImage('assets/images/person_simple.jpg')
+                      : const AssetImage('assets/images/person_simple.jpg')
                           as ImageProvider,
                 ),
                 trailing: IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.delete,
                     color: Colors.red,
                   ),
